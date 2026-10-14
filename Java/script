@@ -1,0 +1,157 @@
+
+const menuToggle = document.getElementById("menu-toggle");
+const navLinks = document.getElementById("nav-links");
+
+// Menú para celulares
+menuToggle.addEventListener("click", () => {
+  const isOpen = navLinks.classList.toggle("open");
+
+  menuToggle.setAttribute("aria-expanded", String(isOpen));
+  menuToggle.setAttribute(
+    "aria-label",
+    isOpen ? "Cerrar menú" : "Abrir menú"
+  );
+
+  menuToggle.textContent = isOpen ? "✕" : "☰";
+});
+
+// Cerrar el menú después de seleccionar una sección
+navLinks.querySelectorAll("a").forEach((link) => {
+  link.addEventListener("click", () => {
+    navLinks.classList.remove("open");
+    menuToggle.setAttribute("aria-expanded", "false");
+    menuToggle.setAttribute("aria-label", "Abrir menú");
+    menuToggle.textContent = "☰";
+  });
+});
+
+// Ventana de demostración
+const demoButton = document.getElementById("demo-button");
+const demoModal = document.getElementById("demo-modal");
+const modalClose = document.getElementById("modal-close");
+const modalExplore = document.getElementById("modal-explore");
+
+function openModal() {
+  demoModal.classList.add("open");
+  demoModal.setAttribute("aria-hidden", "false");
+  modalClose.focus();
+}
+
+function closeModal() {
+  demoModal.classList.remove("open");
+  demoModal.setAttribute("aria-hidden", "true");
+  demoButton.focus();
+}
+
+demoButton.addEventListener("click", openModal);
+modalClose.addEventListener("click", closeModal);
+
+demoModal.addEventListener("click", (event) => {
+  if (event.target === demoModal) {
+    closeModal();
+  }
+});
+
+modalExplore.addEventListener("click", () => {
+  demoModal.classList.remove("open");
+  demoModal.setAttribute("aria-hidden", "true");
+});
+
+document.addEventListener("keydown", (event) => {
+  if (event.key === "Escape" && demoModal.classList.contains("open")) {
+    closeModal();
+  }
+});
+
+// Filtros y búsqueda de servicios de Pet Map
+const searchInput = document.getElementById("service-search");
+const filterButtons = document.querySelectorAll(".filter");
+const serviceCards = document.querySelectorAll(".service-card");
+const mapMessage = document.getElementById("map-message");
+
+let activeCategory = "todos";
+
+function filterServices() {
+  const searchTerm = searchInput.value.trim().toLowerCase();
+  let visibleCount = 0;
+
+  serviceCards.forEach((card) => {
+    const category = card.dataset.category;
+    const searchableText = card.dataset.name + " " + card.textContent;
+
+    const matchesCategory =
+      activeCategory === "todos" || category === activeCategory;
+
+    const matchesSearch = searchableText
+      .toLowerCase()
+      .includes(searchTerm);
+
+    const shouldShow = matchesCategory && matchesSearch;
+
+    card.hidden = !shouldShow;
+
+    if (shouldShow) {
+      visibleCount++;
+    }
+  });
+
+  mapMessage.textContent = visibleCount
+    ? `Se ${visibleCount === 1 ? "encontró" : "encontraron"} ${visibleCount} ${
+        visibleCount === 1 ? "categoría" : "categorías"
+      } de servicio. Los lugares mostrados son ejemplos.`
+    : "No encontramos categorías con esa búsqueda. Prueba con otra palabra.";
+}
+
+searchInput.addEventListener("input", filterServices);
+
+filterButtons.forEach((button) => {
+  button.addEventListener("click", () => {
+    activeCategory = button.dataset.filter;
+
+    filterButtons.forEach((item) => {
+      item.classList.remove("active");
+      item.setAttribute("aria-pressed", "false");
+    });
+
+    button.classList.add("active");
+    button.setAttribute("aria-pressed", "true");
+
+    filterServices();
+  });
+
+  button.setAttribute(
+    "aria-pressed",
+    button.classList.contains("active") ? "true" : "false"
+  );
+});
+
+// Año automático en el pie de página
+document.getElementById("year").textContent = new Date().getFullYear();
+
+// Formulario de contacto
+const contactForm = document.getElementById("contact-form");
+const formStatus = document.getElementById("form-status");
+
+contactForm.addEventListener("submit", (event) => {
+  event.preventDefault();
+
+  const name = document.getElementById("name").value.trim();
+  const email = document.getElementById("email").value.trim();
+  const message = document.getElementById("message").value.trim();
+
+  if (!name || !email || !message) {
+    formStatus.textContent = "Completa todos los campos para continuar.";
+    return;
+  }
+
+  const subject = encodeURIComponent("Mensaje desde la web de Pet Nova");
+  const body = encodeURIComponent(
+    `Nombre: ${name}\nCorreo: ${email}\n\nMensaje:\n${message}`
+  );
+
+  formStatus.textContent =
+    "Si tienes una aplicación de correo configurada, se abrirá para que revises y envíes tu mensaje.";
+
+  window.location.href =
+    `mailto:petnovitas2027@gmail.com?subject=${subject}&body=${body}`;
+});

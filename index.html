@@ -1,89 +1,274 @@
  
+
 <!DOCTYPE html>
- 
 <html lang="es">
 <head>
-     <meta charset="UTF-8">
-     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-     <title>Pet Nova</title>
- 
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Pet Nova: cuida la salud, seguridad y bienestar de tu mascota en un solo lugar.">
+  <title>Pet Nova | El hogar digital de tu mascota</title>
+  <link rel="stylesheet" href="css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 </head>
- 
+
 <body>
- 
-    <header>
-        <h1>Pet Nova</h1>
- 
-    </header>
- 
-    <p>Welcome to Pet Nova, your best ally for the care of your pets.</p>
- 
- 
-<nav>
- 
-    <a href="#">Home</a>
-    <a href="#">About us</a>
-    <a href="#">Functions</a>
-    <a href="#">Contact</a>
-    <a href="#">Privacy Policy</a>
- 
-</nav>
- 
-<main>
- 
-    <section>
- 
-        <h2>Our Family and Paws</h2>
-        <p>More than just an app, we are guardians of your pet and a family united by our love for animals everywhere.</p>
- 
+  <header class="navbar">
+    <a href="#inicio" class="logo">
+      <span class="logo-icon">🐾</span>
+      Pet <span>Nova</span>
+    </a>
+
+    <button class="menu-toggle" id="menu-toggle"
+      aria-label="Abrir menú" aria-expanded="false">☰</button>
+
+    <nav class="nav-links" id="nav-links">
+      <a href="#funciones">Funciones</a>
+      <a href="#mapa">Pet Map</a>
+      <a href="#momentos">Pet Moments</a>
+      <a href="#contacto">Contacto</a>
+      <a href="#funciones" class="nav-button">Descubre la app ↗</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero section" id="inicio">
+      <div class="hero-content">
+        <span class="eyebrow">🇵🇦 Hecho pensando en las mascotas</span>
+        <h1>El hogar digital<br>de tu mascota<span class="purple-dot">.</span></h1>
+        <p class="hero-text">
+          Historial médico, calendario inteligente, Alerta Paw
+          y comunidad: todo lo que necesitas para cuidar a tu
+          compañero de vida en un solo lugar.
+        </p>
+
+        <div class="hero-buttons">
+          <a href="#funciones" class="button button-primary">
+            🐾 Descubre Pet Nova
+          </a>
+          <button class="button button-secondary" id="demo-button">
+            Ver demo <span>→</span>
+          </button>
+        </div>
+
+        <div class="hero-note">
+          <span class="avatar-paw">♥</span>
+          Más organización, más cuidado y más momentos juntos.
+        </div>
+      </div>
+
+      <div class="hero-visual">
+        <div class="hero-image">
+          <img
+            src="https://images.unsplash.com/photo-1543466835-00a7907e9de1?auto=format&fit=crop&w=1000&q=85"
+            alt="Perro disfrutando de un momento al aire libre">
+        </div>
+        <div class="floating-card card-top">
+          <span class="floating-icon">💜</span>
+          <div>
+            <strong>Mucho amor</strong>
+            <small>En cada etapa de su vida</small>
+          </div>
+        </div>
+        <div class="floating-card card-bottom">
+          <span class="floating-icon yellow">✓</span>
+          <div>
+            <strong>Todo organizado</strong>
+            <small>El cuidado en tus manos</small>
+          </div>
+        </div>
+        <span class="decor decor-one">✦</span>
+        <span class="decor decor-two">✿</span>
+      </div>
     </section>
- 
- 
-<section>
- 
-        <h2>Raised with love and plenty of dedication today</h2>
-        <p>We believe every pet deserves the best start. At Pet Nova, we develop tools to help you care for their health, well-being, and happiness, accompanying you during every single stage of their long and busy lives.</p>
- 
+
+    <section class="stats">
+      <div class="stat">
+        <strong>5,000+</strong>
+        <span>Mascotas registradas*</span>
+      </div>
+      <div class="stat">
+        <strong>12,000+</strong>
+        <span>Usuarios activos*</span>
+      </div>
+      <div class="stat">
+        <strong>300+</strong>
+        <span>Servicios listados*</span>
+      </div>
+      <div class="stat">
+        <strong>100%</strong>
+        <span>Amor por las mascotas</span>
+      </div>
     </section>
- 
- 
-    <section>
- 
-        <h2>Everything for your pet's well-being now</h2>
-        <p>Everything your favorite pet needs, on a single platform.</p>
- 
- 
+    <p class="stats-note">*Cifras de ejemplo del diseño; reemplázalas por datos reales antes de publicar.</p>
+
+    <section class="section intro-section" id="funciones">
+      <div class="section-heading">
+        <span class="eyebrow">TODO EN UN SOLO LUGAR</span>
+        <h2>Su bienestar es nuestra <span>prioridad.</span></h2>
+        <p>Herramientas sencillas para acompañarte en el cuidado diario de tu mascota.</p>
+      </div>
+
+      <div class="feature-grid">
+        <article class="feature-card lavender">
+          <div class="feature-icon">🩺</div>
+          <span class="feature-number">01 / SALUD</span>
+          <h3>Historial médico</h3>
+          <p>Organiza vacunas, consultas y datos importantes de tu mascota para tenerlos a mano.</p>
+          <a href="#contacto" class="text-link">Conoce más ↗</a>
+        </article>
+
+        <article class="feature-card yellow-card">
+          <div class="feature-icon">📅</div>
+          <span class="feature-number">02 / ORGANIZACIÓN</span>
+          <h3>Calendario inteligente</h3>
+          <p>Ten presentes las citas veterinarias, vacunas y próximas fechas de cuidado.</p>
+          <a href="#contacto" class="text-link">Conoce más ↗</a>
+        </article>
+
+        <article class="feature-card pink-card">
+          <div class="feature-icon">🐕</div>
+          <span class="feature-number">03 / COMUNIDAD</span>
+          <h3>Alerta Paw</h3>
+          <p>Comparte avisos sobre mascotas perdidas y ayuda a la comunidad a estar pendiente.</p>
+          <a href="#contacto" class="text-link">Conoce más ↗</a>
+        </article>
+      </div>
     </section>
- 
- 
-<section>
- 
-        <h2>Pet Map</h2>
-        <p>With Pet Map you find veterinarians, services and pet-friendly spots near you, and see the last recorded location of your beloved pets in just a few seconds.</p>
- 
- 
+
+    <section class="map-section section" id="mapa">
+      <div class="map-copy">
+        <span class="eyebrow">DESCUBRE LO QUE TE RODEA</span>
+        <h2>Todo para tu mascota, <span>más cerca.</span></h2>
+        <p>
+          Encuentra lugares y servicios para mascotas en tu ciudad:
+          veterinarias, parques, peluquerías, tiendas y mucho más.
+        </p>
+
+        <label for="service-search" class="search-label">Explora los servicios</label>
+        <div class="search-box">
+          <span>⌕</span>
+          <input id="service-search" type="search"
+            placeholder="Ej. veterinaria, parques...">
+        </div>
+        <div class="service-filters" aria-label="Filtrar servicios">
+          <button class="filter active" data-filter="todos">Todos</button>
+          <button class="filter" data-filter="salud">Salud</button>
+          <button class="filter" data-filter="diversion">Diversión</button>
+          <button class="filter" data-filter="compras">Compras</button>
+        </div>
+      </div>
+
+      <div class="service-grid" id="service-grid">
+        <article class="service-card" data-category="salud" data-name="veterinaria clínica salud">
+          <div class="service-emoji">🏥</div>
+          <div><h3>Veterinarias</h3><p>Atención y salud animal</p></div>
+          <span class="service-arrow">↗</span>
+        </article>
+        <article class="service-card" data-category="diversion" data-name="parques paseo diversión">
+          <div class="service-emoji">🌳</div>
+          <div><h3>Parques</h3><p>Espacios para pasear</p></div>
+          <span class="service-arrow">↗</span>
+        </article>
+        <article class="service-card" data-category="salud" data-name="peluquería grooming baño">
+          <div class="service-emoji">🛁</div>
+          <div><h3>Peluquerías</h3><p>Higiene y cuidado</p></div>
+          <span class="service-arrow">↗</span>
+        </article>
+        <article class="service-card" data-category="compras" data-name="tiendas alimentos accesorios compras">
+          <div class="service-emoji">🦴</div>
+          <div><h3>Tiendas</h3><p>Productos y accesorios</p></div>
+          <span class="service-arrow">↗</span>
+        </article>
+      </div>
+      <p class="map-disclaimer" id="map-message">
+        Explora las categorías de ejemplo. Los establecimientos reales
+        se incorporarán al conectar el mapa con una base de datos.
+      </p>
     </section>
- 
-    <section>
- 
-        <h2>Pet Moments</h2>
-        <p>Every photo tells the story of our greatest adventures and the quiet beauty of our daily lives together. These precious memories are a gift we will cherish forever.</p>
- 
- 
+
+    <section class="moments-section section" id="momentos">
+      <div class="section-heading">
+        <span class="eyebrow">PEQUEÑOS MOMENTOS, GRANDES RECUERDOS</span>
+        <h2>La vida es mejor <span>con patitas.</span></h2>
+        <p>Cada paseo, cada juego y cada abrazo forma parte de una historia especial.</p>
+      </div>
+
+      <div class="gallery">
+        <img src="https://images.unsplash.com/photo-1552053831-71594a27632d?auto=format&fit=crop&w=700&q=85"
+          alt="Perro disfrutando de un paseo" loading="lazy">
+        <img src="https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?auto=format&fit=crop&w=700&q=85"
+          alt="Gato descansando" loading="lazy">
+        <img src="https://images.unsplash.com/photo-1548199973-03cce0bbc87b?auto=format&fit=crop&w=700&q=85"
+          alt="Dos perros jugando juntos" loading="lazy">
+      </div>
     </section>
- 
-</main>
- 
-<footer>
- 
- 
-    <p>&copy; 2024 Pet Nova. All rights reserved.</p>
- 
-    </footer>
- 
+
+    <section class="cta-section">
+      <div class="cta-paw">🐾</div>
+      <span class="eyebrow">UNA COMUNIDAD QUE CUIDA</span>
+      <h2>Su mundo es pequeño.<br>Hazlo extraordinario.</h2>
+      <p>Únete a una forma más organizada y cercana de cuidar a tu mejor amigo.</p>
+      <a href="#contacto" class="button button-dark">Conoce Pet Nova ↗</a>
+    </section>
+
+    <section class="contact-section section" id="contacto">
+      <div class="contact-copy">
+        <span class="eyebrow">HABLEMOS</span>
+        <h2>Conectemos por ellos<span>.</span></h2>
+        <p>¿Tienes preguntas o ideas para Pet Nova? Nos encantaría conocerlas.</p>
+        <div class="contact-detail">
+          <span>✉️</span>
+          <div><strong>Correo electrónico</strong>
+            <p>petnovitas2027@gmail.com</p></div>
+        </div>
+        <div class="contact-detail">
+          <span>📍</span>
+          <div><strong>Ubicación</strong><p>La Chorrera, Panamá Oeste, Panamá</p></div>
+        </div>
+      </div>
+
+      <form class="contact-form" id="contact-form">
+        <label for="name">Tu nombre</label>
+        <input id="name" name="name" type="text"
+          placeholder="Escribe tu nombre" required>
+
+        <label for="email">Tu correo</label>
+        <input id="email" name="email" type="email"
+          placeholder="correo@ejemplo.com" required>
+
+        <label for="message">Tu mensaje</label>
+        <textarea id="message" name="message" rows="4"
+          placeholder="Cuéntanos tu idea..." required></textarea>
+
+        <button class="button button-primary" type="submit">Preparar mensaje ↗</button>
+        <p class="form-status" id="form-status" role="status">
+          El formulario abrirá tu aplicación de correo para enviar el mensaje.
+        </p>
+      </form>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <a href="#inicio" class="logo footer-logo">🐾 Pet <span>Nova</span></a>
+    <p>Hecho con amor para quienes hacen nuestra vida mejor.</p>
+    <a href="#inicio" class="back-top">Volver arriba ↑</a>
+    <small>© <span id="year"></span> Pet Nova · Proyecto demostrativo.</small>
+  </footer>
+
+  <div class="modal" id="demo-modal" aria-hidden="true">
+    <div class="modal-content" role="dialog" aria-modal="true"
+      aria-labelledby="modal-title">
+      <button class="modal-close" id="modal-close" aria-label="Cerrar">×</button>
+      <div class="modal-paw">🐾</div>
+      <span class="eyebrow">CONOCE PET NOVA</span>
+      <h2 id="modal-title">Todo el cuidado en un solo lugar.</h2>
+      <p>Organiza la salud de tu mascota, consulta servicios y mantente conectado con la comunidad.</p>
+      <a href="#funciones" class="button button-primary" id="modal-explore">Explorar funciones</a>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
 </body>
- 
-    </html>
- 
- 
- 
+</html>
